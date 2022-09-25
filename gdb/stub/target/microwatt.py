@@ -108,7 +108,8 @@ class Microwatt(Target):
 
         def connect(self):
             self._urc = urjtag.chain()
-            self._urc.cable("DigilentNexysVideo")  # FIXME: magic constant!
+            self._urc.cable("ARM-USB-OCD-H")  # FIXME: magic constant!
+            self._urc.set_frequency(1000000)
 
             # from bscane2_init()
             self._urc.addpart(6)
